@@ -1,0 +1,379 @@
+QuestaSim-64 qrun 2024.3_1 Utility 2024.10 Oct 17 2024
+Start time: 11:27:55 on Nov 14,2025
+qrun -batch -access=rw+/. -uvmhome uvm-1.2 -timescale 1ns/1ns -mfcu design.sv testbench.sv "+UVM_TESTNAME=oversized_packet_test" "+define+ASSERT_ON" -do " run -all; exit" 
+Creating library 'qrun.out/work'.
+Mapping library 'mtiUvm' to 'qrun.out/work'.
+QuestaSim-64 vlog 2024.3_1 Compiler 2024.10 Oct 17 2024
+Start time: 11:27:55 on Nov 14,2025
+vlog -timescale 1ns/1ns -mfcu "+define+ASSERT_ON" -ccflags "-Wno-missing-declarations" -ccflags "-Wno-maybe-uninitialized" -ccflags "-Wno-return-type" -ccflags "-DQUESTA" /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc /usr/share/questa/questasim/verilog_src/uvm-1.2/src/uvm_pkg.sv /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv design.sv testbench.sv -work qrun.out/work "+incdir+/usr/share/questa/questasim/verilog_src/uvm-1.2/src" -statslog qrun.out/stats_log -writesessionid "+qrun.out/top_dus" -csession=incr 
+-- Compiling package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling package questa_uvm_pkg
+-- Importing package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling package uvm_pkg_sv_unit
+-- Importing package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling module generic_fifo
+-- Compiling module generic_fifo_ctrl
+-- Compiling module generic_mem_medium
+-- Compiling module generic_mem_small
+-- Compiling module meta_sync
+-- Compiling module meta_sync_single
+-- Compiling module rx_data_fifo
+-- Compiling module rx_dequeue
+-- Compiling module rx_enqueue
+-- Compiling module rx_hold_fifo
+-- Compiling module sync_clk_core
+-- Compiling module sync_clk_wb
+-- Compiling module sync_clk_xgmii_tx
+-- Compiling module tx_data_fifo
+-- Compiling module tx_dequeue
+-- Compiling module tx_enqueue
+-- Compiling module tx_hold_fifo
+-- Compiling module wishbone_if
+-- Compiling module fault_sm
+-- Compiling module xge_mac
+-- Compiling interface xge_mac_interface
+-- Compiling module assertions_for_xge_mac
+-- Compiling program testcase
+-- Compiling module xge_test_top
+
+Top level modules:
+	testcase
+	xge_test_top
+-- Compiling DPI/PLI C++ file /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc
+
+In file included from /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl.c:27,
+                 from /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc:37:
+/usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl_questa.c: In function 'int uvm_is_vhdl_path(char*)':
+/usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl_questa.c:90:12: warning: 'char* strncpy(char*, const char*, size_t)' specified bound depends on the length of the source argument [-Wstringop-overflow=]
+   90 |     strncpy(path_copy, path, path_len);
+      |     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_hdl_questa.c:72:20: note: length computed here
+   72 |   path_len = strlen(path);
+      |              ~~~~~~^~~~~~
+
+End time: 11:27:58 on Nov 14,2025, Elapsed time: 0:00:03
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 2024.3_1 Compiler 2024.10 Oct 17 2024
+Start time: 11:27:58 on Nov 14,2025
+vopt -access=rw+/. -timescale 1ns/1ns -mfcu -findtoplevels qrun.out/work+1+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=2 
+
+Top level modules:
+	testcase
+	xge_test_top
+
+Analyzing design...
+-- Loading program testcase
+-- Loading module xge_test_top
+-- Loading package questa_uvm_pkg
+-- Loading interface xge_mac_interface
+-- Loading module xge_mac
+-- Loading module rx_enqueue
+-- Loading module rx_dequeue
+-- Loading module rx_data_fifo
+-- Loading module generic_fifo
+-- Loading module generic_fifo_ctrl
+-- Loading module rx_hold_fifo
+-- Loading module tx_enqueue
+-- Loading module tx_dequeue
+-- Loading module tx_data_fifo
+-- Loading module tx_hold_fifo
+-- Loading module fault_sm
+-- Loading module sync_clk_wb
+-- Loading module meta_sync
+-- Loading module sync_clk_xgmii_tx
+-- Loading module sync_clk_core
+-- Loading module wishbone_if
+-- Loading module generic_mem_medium
+-- Loading module generic_mem_small
+-- Loading module meta_sync_single
+-- Loading module assertions_for_xge_mac
+Optimizing 38 design-units (inlining 42/45 module instances):
+-- Optimizing package uvm_pkg (uvm-1.2 Built-in)(fast)
+-- Optimizing package questa_uvm_pkg(fast)
+-- Optimizing package uvm_pkg_sv_unit(fast)
+-- Inlining module rx_enqueue(fast)
+-- Inlining module rx_dequeue(fast)
+-- Inlining module generic_fifo_ctrl(fast)
+-- Inlining module generic_mem_medium(fast)
+-- Inlining module generic_fifo(fast)
+-- Inlining module rx_data_fifo(fast)
+-- Inlining module generic_fifo_ctrl(fast__1)
+-- Inlining module generic_mem_small(fast)
+-- Inlining module generic_fifo(fast__1)
+-- Inlining module rx_hold_fifo(fast)
+-- Inlining module tx_enqueue(fast)
+-- Inlining module tx_dequeue(fast)
+-- Inlining module generic_fifo_ctrl(fast__2)
+-- Inlining module generic_mem_medium(fast__1)
+-- Inlining module generic_fifo(fast__2)
+-- Inlining module tx_data_fifo(fast)
+-- Inlining module generic_fifo_ctrl(fast__3)
+-- Inlining module generic_fifo(fast__3)
+-- Inlining module tx_hold_fifo(fast)
+-- Inlining module fault_sm(fast)
+-- Inlining module meta_sync_single(fast)
+-- Inlining module meta_sync(fast)
+-- Inlining module meta_sync_single(fast__1)
+-- Inlining module meta_sync(fast__1)
+-- Inlining module sync_clk_wb(fast)
+-- Inlining module meta_sync(fast__2)
+-- Inlining module sync_clk_xgmii_tx(fast)
+-- Inlining module sync_clk_core(fast)
+-- Inlining module wishbone_if(fast)
+-- Inlining module assertions_for_xge_mac(fast)
+-- Inlining module xge_mac(fast)
+-- Optimizing module xge_test_top(fast)
+-- Optimizing interface xge_mac_interface(fast__2)
+-- Optimizing program testcase(fast)
+-- Optimizing interface xge_mac_interface(fast)
+Optimized design name is qrun_opt
+End time: 11:28:06 on Nov 14,2025, Elapsed time: 0:00:08
+Errors: 0, Warnings: 0
+# vsim -batch "+UVM_TESTNAME=oversized_packet_test" -lib qrun.out/work -do " run -all; exit" -statslog qrun.out/stats_log qrun_opt -appendlog -l qrun.log 
+# Start time: 11:28:06 on Nov 14,2025
+# Loading /tmp/unknown@bd5fdfbc11d5_dpi_52/linux_x86_64_gcc-10.3.0/export_tramp.so
+# //  Questa Sim-64
+# //  Version 2024.3_1 linux_x86_64 Oct 17 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.xge_mac_interface(fast)
+# Loading work.uvm_pkg(fast)
+# Loading work.uvm_pkg_sv_unit(fast)
+# Loading work.questa_uvm_pkg(fast)
+# Loading work.testcase(fast)
+# Loading work.xge_test_top(fast)
+# Loading work.xge_mac_interface(fast__2)
+# Compiling /tmp/unknown@bd5fdfbc11d5_dpi_52/linux_x86_64_gcc-10.3.0/exportwrapper.c
+# Loading /tmp/unknown@bd5fdfbc11d5_dpi_52/linux_x86_64_gcc-10.3.0/vsim_auto_compile.so
+# 
+# run -all
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# ----------------------------------------------------------------
+# UVM-1.2
+# (C) 2007-2014 Mentor Graphics Corporation
+# (C) 2007-2014 Cadence Design Systems, Inc.
+# (C) 2006-2014 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# (C) 2013-2014 NVIDIA Corporation
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test oversized_packet_test...
+# UVM_INFO oversized_packet_test.sv(22) @ 0: uvm_test_top [uvm_test_top] Hierarchy: testcase.oversized_packet_test.build_phase
+# UVM_INFO testclass.sv(67) @ 0: uvm_test_top [uvm_test_top] Printing Topology from end_of_elaboration phase
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(579) @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------------------
+# Name                       Type                                Size  Value
+# --------------------------------------------------------------------------
+# uvm_test_top               oversized_packet_test               -     @360 
+#   m_env                    env                                 -     @372 
+#     pkt_rx_agent           packet_rx_agent                     -     @551 
+#       ap_rx_agent          uvm_analysis_port                   -     @594 
+#       pkt_rx_mon           packet_rx_monitor                   -     @586 
+#         ap_rx_mon          uvm_analysis_port                   -     @603 
+#     pkt_tx_agent           packet_tx_agent                     -     @543 
+#       ap_tx_agent          uvm_analysis_port                   -     @771 
+#       pkt_tx_drv           packet_tx_driver                    -     @737 
+#         rsp_port           uvm_analysis_port                   -     @754 
+#         seq_item_port      uvm_seq_item_pull_port              -     @745 
+#       pkt_tx_mon           packet_tx_monitor                   -     @763 
+#         ap_tx_mon          uvm_analysis_port                   -     @781 
+#       pkt_tx_seqr          packet_tx_sequencer                 -     @614 
+#         rsp_export         uvm_analysis_export                 -     @622 
+#         seq_item_export    uvm_seq_item_pull_imp               -     @728 
+#         arbitration_queue  array                               0     -    
+#         lock_queue         array                               0     -    
+#         num_last_reqs      integral                            32    'd1  
+#         num_last_rsps      integral                            32    'd1  
+#     rst_agent              reset_agent                         -     @527 
+#       rst_drv              reset_driver                        -     @920 
+#         rsp_port           uvm_analysis_port                   -     @937 
+#         seq_item_port      uvm_seq_item_pull_port              -     @928 
+#       rst_seqr             reset_sequencer                     -     @797 
+#         rsp_export         uvm_analysis_export                 -     @805 
+#         seq_item_export    uvm_seq_item_pull_imp               -     @911 
+#         arbitration_queue  array                               0     -    
+#         lock_queue         array                               0     -    
+#         num_last_reqs      integral                            32    'd1  
+#         num_last_rsps      integral                            32    'd1  
+#     scbd                   scoreboard                          -     @575 
+#       from_pkt_rx_agent    uvm_analysis_imp_from_pkt_rx_agent  -     @962 
+#       from_pkt_tx_agent    uvm_analysis_imp_from_pkt_tx_agent  -     @953 
+#       from_wshbn_agent     uvm_analysis_imp_from_wshbn_agent   -     @971 
+#     wshbn_agent            wishbone_agent                      -     @535 
+#       ap_agent             uvm_analysis_port                   -     @1140
+#       wshbn_drv            wishbone_driver                     -     @1106
+#         rsp_port           uvm_analysis_port                   -     @1123
+#         seq_item_port      uvm_seq_item_pull_port              -     @1114
+#       wshbn_mon            wishbone_monitor                    -     @1132
+#         ap_mon             uvm_analysis_port                   -     @1150
+#       wshbn_seqr           wishbone_sequencer                  -     @983 
+#         rsp_export         uvm_analysis_export                 -     @991 
+#         seq_item_export    uvm_seq_item_pull_imp               -     @1097
+#         arbitration_queue  array                               0     -    
+#         lock_queue         array                               0     -    
+#         num_last_reqs      integral                            32    'd1  
+#         num_last_rsps      integral                            32    'd1  
+#     xgmii_rx_agt           xgmii_rx_agent                      -     @567 
+#       ap_agent             uvm_analysis_port                   -     @1174
+#       xgmii_rx_mon         xgmii_rx_monitor                    -     @1166
+#         ap_mon             uvm_analysis_port                   -     @1183
+#     xgmii_tx_agt           xgmii_tx_agent                      -     @559 
+#       ap_agent             uvm_analysis_port                   -     @1202
+#       xgmii_tx_mon         xgmii_tx_monitor                    -     @1194
+#         ap_mon             uvm_analysis_port                   -     @1211
+#   v_seqr                   virtual_sequencer                   -     @401 
+#     rsp_export             uvm_analysis_export                 -     @409 
+#     seq_item_export        uvm_seq_item_pull_imp               -     @515 
+#     arbitration_queue      array                               0     -    
+#     lock_queue             array                               0     -    
+#     num_last_reqs          integral                            32    'd1  
+#     num_last_rsps          integral                            32    'd1  
+# --------------------------------------------------------------------------
+# 
+# UVM_INFO testclass.sv(76) @ 0: uvm_test_top [uvm_test_top] Printing factory from start_of_simulation phase
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_factory.svh(1645) @ 0: reporter [UVM/FACTORY/PRINT] 
+#### Factory Configuration (*)
+# 
+# No instance overrides are registered with this factory
+# 
+# Type Overrides:
+# 
+#   Requested Type  Override Type   
+#   --------------  ----------------
+#   packet          packet_oversized
+# 
+# All types registered with the factory: 101 total
+#   Type Name
+#   ---------
+#   bringup_packet_test
+#   env
+#   oversized_packet_test
+#   packet
+#   packet_bringup
+#   packet_oversized
+#   packet_rx_agent
+#   packet_rx_monitor
+#   packet_sequence
+#   packet_small_ipg
+#   packet_small_large
+#   packet_tx_agent
+#   packet_tx_driver
+#   packet_tx_monitor
+#   packet_tx_sequencer
+#   packet_undersized
+#   packet_zero_ipg
+#   questa_uvm_recorder
+#   reset_agent
+#   reset_driver
+#   reset_item
+#   reset_sequence
+#   reset_sequencer
+#   scoreboard
+#   small_ipg_packet_test
+#   small_large_packet_test
+#   test_base
+#   undersized_packet_test
+#   virtual_sequence
+#   virtual_sequence_test_base
+#   virtual_sequencer
+#   wishbone_agent
+#   wishbone_driver
+#   wishbone_eot_sequence
+#   wishbone_init_sequence
+#   wishbone_item
+#   wishbone_monitor
+#   wishbone_sequencer
+#   xgmii_packet
+#   xgmii_rx_agent
+#   xgmii_rx_monitor
+#   xgmii_tx_agent
+#   xgmii_tx_monitor
+#   zero_ipg_packet_test
+# (*) Types with no associated type name will be printed as <unknown>
+# 
+####
+# 
+# 
+# UVM_INFO oversized_packet_test.sv(45) @ 0: uvm_test_top [uvm_test_top] Starting OVERSIZED virtual sequence...
+# UVM_INFO wishbone_driver.sv(44) @ 0: uvm_test_top.m_env.wshbn_agent.wshbn_drv [wshbn_drv] Starting wishbone_driver::run_phase - uvm_pkg_sv_unit.wishbone_driver.run_phase
+# UVM_INFO virtual_sequence.sv(22) @ 0: uvm_test_top.v_seqr@@vseq [VSEQ] virtual_sequence::body() STARTED
+# UVM_INFO virtual_sequence.sv(24) @ 0: uvm_test_top.v_seqr@@vseq [VSEQ] p_sequencer = {v_seqr} 401 1 1265 @uvm_status_container@1 { } @uvm_report_handler@38 0 1 @uvm_text_tr_database@1 @uvm_domain@2 { } @uvm_phase@6 null 1 0 @oversized_packet_test@1 { {"req_fifo":@uvm_tlm_fifo__2@1} {"rsp_export":@uvm_port_component__4@1} {"seq_item_export":@uvm_port_component__3@1} {"sqr_rsp_analysis_fifo":@uvm_sequencer_analysis_fifo__2@1} } { {@uvm_port_component__4@1:@uvm_port_component__4@1} {@uvm_tlm_fifo__2@1:@uvm_tlm_fifo__2@1} {@uvm_sequencer_analysis_fifo__2@1:@uvm_sequencer_analysis_fifo__2@1} {@uvm_port_component__3@1:@uvm_port_component__3@1} } null { {"vseq": {"Transactions":@uvm_text_tr_stream@1} } } { } {uvm_test_top.v_seqr} @uvm_object_string_pool__3@3 0 {} 0 1 0 {uvm_component} {} {} {} {} { } {} { {1:@virtual_sequence@1} } 1 -1 0 0 0 0 10 0 UVM_SEQ_ARB_FIFO { } 0 1 -1 0 0 0 10 4 {uvm_random_sequence} 0 {} { } 0 0 2 5 {} {} 1 1 1 0 0 @uvm_sequencer_analysis_fifo__2@1 @uvm_analysis_export__2@1 @uvm_tlm_fifo__2@1 0 0 @uvm_seq_item_pull_imp__2@1 @reset_sequencer@1 @wishbone_sequencer@1 @packet_tx_sequencer@1 {virtual_sequencer}
+# UVM_INFO virtual_sequence.sv(25) @ 0: uvm_test_top.v_seqr@@vseq [VSEQ] p_sequencer.seqr_tx_pkt = {pkt_tx_seqr} 614 1 1267 @uvm_status_container@1 { } @uvm_report_handler@62 0 1 null @uvm_domain@2 { } @uvm_phase@6 null 1 0 @packet_tx_agent@1 { {"req_fifo":@uvm_tlm_fifo__3@1} {"rsp_export":@uvm_port_component__10@3} {"seq_item_export":@uvm_port_component__9@1} {"sqr_rsp_analysis_fifo":@uvm_sequencer_analysis_fifo__3@1} } { {@uvm_port_component__9@1:@uvm_port_component__9@1} {@uvm_tlm_fifo__3@1:@uvm_tlm_fifo__3@1} {@uvm_sequencer_analysis_fifo__3@1:@uvm_sequencer_analysis_fifo__3@1} {@uvm_port_component__10@3:@uvm_port_component__10@3} } null { } { } {uvm_test_top.m_env.pkt_tx_agent.pkt_tx_seqr} @uvm_object_string_pool__3@27 0 {} 0 1 0 {uvm_component} {} {} {} {} { } {} { } 2 -1 0 0 0 0 10 0 UVM_SEQ_ARB_FIFO { } 0 1 -1 0 0 0 10 4 {uvm_random_sequence} 0 {} { } 0 0 2 5 {} {} 1 1 1 0 0 @uvm_sequencer_analysis_fifo__3@1 @uvm_analysis_export__3@1 @uvm_tlm_fifo__3@1 0 0 @uvm_seq_item_pull_imp__3@1 {packet_tx_sequencer}
+# UVM_INFO virtual_sequence.sv(27) @ 0: uvm_test_top.v_seqr@@vseq [VSEQ] About to start PACKET SEQUENCE
+# UVM_INFO packet_sequence.sv(16) @ 0: uvm_test_top.m_env.pkt_tx_agent.pkt_tx_seqr@@vseq.seq_pkt [PKT_SEQ] packet_sequence::body() STARTED
+# UVM_INFO virtual_sequence.sv(22) @ 0: uvm_test_top.v_seqr@@virtual_sequence [VSEQ] virtual_sequence::body() STARTED
+# UVM_INFO virtual_sequence.sv(24) @ 0: uvm_test_top.v_seqr@@virtual_sequence [VSEQ] p_sequencer = {v_seqr} 401 1 1375 @uvm_status_container@1 { } @uvm_report_handler@38 0 1 @uvm_text_tr_database@1 @uvm_domain@2 { } @uvm_phase@21 null 1 0 @oversized_packet_test@1 { {"req_fifo":@uvm_tlm_fifo__2@1} {"rsp_export":@uvm_port_component__4@1} {"seq_item_export":@uvm_port_component__3@1} {"sqr_rsp_analysis_fifo":@uvm_sequencer_analysis_fifo__2@1} } { {@uvm_port_component__4@1:@uvm_port_component__4@1} {@uvm_tlm_fifo__2@1:@uvm_tlm_fifo__2@1} {@uvm_sequencer_analysis_fifo__2@1:@uvm_sequencer_analysis_fifo__2@1} {@uvm_port_component__3@1:@uvm_port_component__3@1} } null { {"virtual_sequence": {"Transactions":@uvm_text_tr_stream@5} } {"vseq": {"Transactions":@uvm_text_tr_stream@1} } } { } {uvm_test_top.v_seqr} @uvm_object_string_pool__3@3 0 {} 0 1 0 {uvm_component} {} {} {} {} { } {} { {1:@virtual_sequence@1} {5:@virtual_sequence@2} } 1 -1 0 0 0 0 10 0 UVM_SEQ_ARB_FIFO { {@uvm_phase@21:@uvm_sequence_process_wrapper@3} } 0 1 -1 0 0 0 10 4 {uvm_random_sequence} 0 {} { } 0 3 6 5 {} {} 1 1 1 0 0 @uvm_sequencer_analysis_fifo__2@1 @uvm_analysis_export__2@1 @uvm_tlm_fifo__2@1 0 0 @uvm_seq_item_pull_imp__2@1 @reset_sequencer@1 @wishbone_sequencer@1 @packet_tx_sequencer@1 {virtual_sequencer}
+# UVM_INFO virtual_sequence.sv(25) @ 0: uvm_test_top.v_seqr@@virtual_sequence [VSEQ] p_sequencer.seqr_tx_pkt = {pkt_tx_seqr} 614 1 1377 @uvm_status_container@1 { } @uvm_report_handler@62 0 1 @uvm_text_tr_database@1 @uvm_domain@2 { } @uvm_phase@21 null 1 0 @packet_tx_agent@1 { {"req_fifo":@uvm_tlm_fifo__3@1} {"rsp_export":@uvm_port_component__10@3} {"seq_item_export":@uvm_port_component__9@1} {"sqr_rsp_analysis_fifo":@uvm_sequencer_analysis_fifo__3@1} } { {@uvm_port_component__9@1:@uvm_port_component__9@1} {@uvm_tlm_fifo__3@1:@uvm_tlm_fifo__3@1} {@uvm_sequencer_analysis_fifo__3@1:@uvm_sequencer_analysis_fifo__3@1} {@uvm_port_component__10@3:@uvm_port_component__10@3} } null { {"vseq": {"Transactions":@uvm_text_tr_stream@2} } } { } {uvm_test_top.m_env.pkt_tx_agent.pkt_tx_seqr} @uvm_object_string_pool__3@27 0 {} 0 1 0 {uvm_component} {} {} {} {@uvm_sequence_request@1} { } {} { {2:@packet_sequence@1} } 2 0 0 0 0 0 10 0 UVM_SEQ_ARB_FIFO { } 0 1 -1 0 0 0 10 4 {uvm_random_sequence} 0 {} { } 0 3 6 5 {} {} 1 1 1 0 0 @uvm_sequencer_analysis_fifo__3@1 @uvm_analysis_export__3@1 @uvm_tlm_fifo__3@1 0 0 @uvm_seq_item_pull_imp__3@1 {packet_tx_sequencer}
+# UVM_INFO virtual_sequence.sv(27) @ 0: uvm_test_top.v_seqr@@virtual_sequence [VSEQ] About to start PACKET SEQUENCE
+# UVM_INFO packet_sequence.sv(16) @ 0: uvm_test_top.m_env.pkt_tx_agent.pkt_tx_seqr@@virtual_sequence.seq_pkt [PKT_SEQ] packet_sequence::body() STARTED
+# UVM_INFO packet_rx_monitor.sv(145) @ 0: uvm_test_top.m_env.pkt_rx_agent.pkt_rx_mon [pkt_rx_mon] REPORT: Captured 0 packets
+# UVM_INFO packet_tx_monitor.sv(127) @ 0: uvm_test_top.m_env.pkt_tx_agent.pkt_tx_mon [pkt_tx_mon] REPORT: Captured 0 packets
+# UVM_INFO wishbone_monitor.sv(59) @ 0: uvm_test_top.m_env.wshbn_agent.wshbn_mon [wshbn_mon] REPORT: Captured 0 wishbone transactions
+# UVM_INFO xgmii_rx_monitor.sv(56) @ 0: uvm_test_top.m_env.xgmii_rx_agt.xgmii_rx_mon [xgmii_rx_mon] REPORT: Captured 0 xgmii transactions
+# UVM_INFO xgmii_tx_monitor.sv(56) @ 0: uvm_test_top.m_env.xgmii_tx_agt.xgmii_tx_mon [xgmii_tx_mon] REPORT: Captured 0 xgmii transactions
+# UVM_INFO scoreboard.sv(275) @ 0: uvm_test_top.m_env.scbd [scbd] FINAL: Packet Matches   = 0
+# UVM_INFO scoreboard.sv(277) @ 0: uvm_test_top.m_env.scbd [scbd] FINAL: Packet Mismatches= 0
+# UVM_INFO scoreboard.sv(279) @ 0: uvm_test_top.m_env.scbd [scbd] FINAL: Wishbone Errors  = 0
+# UVM_INFO scoreboard.sv(283) @ 0: uvm_test_top.m_env.scbd [scbd] COVERAGE: Packets Sampled=0  WB Txns=0
+# UVM_INFO scoreboard.sv(290) @ 0: uvm_test_top.m_env.scbd [scbd] ********** TEST PASSED **********
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 0: reporter [UVM/REPORT/SERVER] 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   31
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [PKT_SEQ]     2
+# [Questa UVM]     2
+# [RNTST]     1
+# [UVM/FACTORY/PRINT]     1
+# [UVM/RELNOTES]     1
+# [UVMTOP]     1
+# [VSEQ]     8
+# [pkt_rx_mon]     1
+# [pkt_tx_mon]     1
+# [scbd]     5
+# [uvm_test_top]     4
+# [wshbn_drv]     1
+# [wshbn_mon]     1
+# [xgmii_rx_mon]     1
+# [xgmii_tx_mon]     1
+# 
+# ** Note: $finish    : /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
+#    Time: 0 ps  Iteration: 220  Instance: /testcase
+# End time: 11:28:08 on Nov 14,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+End time: 11:28:08 on Nov 14,2025, Elapsed time: 0:00:13
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   0
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   0

@@ -1,0 +1,6 @@
+  CREATE_STREAM @0 {NAME:vseq T:Transactions SCOPE:uvm_test_top.v_seqr STREAM:1258}
+  CREATE_STREAM @0 {NAME:vseq T:Transactions SCOPE:uvm_test_top.m_env.pkt_tx_agent.pkt_tx_seqr STREAM:1277}
+  CREATE_STREAM @0 {NAME:reset_sequence T:Transactions SCOPE:uvm_test_top.m_env.rst_agent.rst_seqr STREAM:1306}
+  CREATE_STREAM @0 {NAME:wishbone_init_sequence T:Transactions SCOPE:uvm_test_top.m_env.wshbn_agent.wshbn_seqr STREAM:1338}
+  CREATE_STREAM @0 {NAME:virtual_sequence T:Transactions SCOPE:uvm_test_top.v_seqr STREAM:1371}
+  CREATE_STREAM @0 {NAME:virtual_sequence T:Transactions SCOPE:uvm_test_top.m_env.pkt_tx_agent.pkt_tx_seqr STREAM:1387}
